@@ -33,12 +33,12 @@ public class EmailService {
 	private ERMSConfiguration erms;
 
 	/**
-	 * Sends message to KANA system
+	 * Sends message to ERMS system
 	 * 
-	 * @param kanaMessage
+	 * @param emailMessage
 	 * @return true if message is send successfully
 	 */
-	public boolean sendMessage(EmailMessage kanaMessage) {
+	public boolean sendMessage(EmailMessage emailMessage) {
 		boolean status = false;
 		try {
 			URLName urlName = new URLName(erms.getProtocol(), erms.getEmailHost(),
@@ -50,18 +50,18 @@ public class EmailService {
 
 			Message message = new MimeMessage(session);
 			addHeaders(message);
-			message.setSubject(kanaMessage.getSubject());
-			message.setFrom(new InternetAddress(kanaMessage.getFromAddress()));
-			message.setContent(mimeMultiPart(kanaMessage));
+			message.setSubject(emailMessage.getSubject());
+			message.setFrom(new InternetAddress(emailMessage.getFromAddress()));
+			message.setContent(mimeMultiPart(emailMessage));
 
 			final InternetAddress[] internetAddress = { new InternetAddress(erms.getDestinationAddress()) };
 			smtpTransport.sendMessage(message, internetAddress);
 			smtpTransport.close();
 
-			log.info("Successfully triggered an email to KANA");
+			log.info("Successfully triggered an email to ERMS");
 			status = true;
 		} catch (Exception exception) {
-			log.info("Unable to send message to KANA", exception);
+			log.info("Unable to send message to ERMS", exception);
 		}
 		return status;
 	}

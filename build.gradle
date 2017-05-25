@@ -3,7 +3,6 @@ println "Environment: ${environment}"
 buildscript {
     repositories {
         mavenCentral()
-        jcenter()
         mavenLocal()
     }
 }
@@ -47,6 +46,10 @@ task wrapper(type: Wrapper) {
 
 task sourceJar(type: Jar) {
     from sourceSets.main.allJava
+}
+
+artifacts {
+    archives sourceJar
 }
 
 publishing {
