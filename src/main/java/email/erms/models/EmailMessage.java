@@ -1,4 +1,4 @@
-package org.little.star.email.erms.models;
+package email.erms.models;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package org.little.star.email.erms.services;
+package email.erms.services;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -17,8 +17,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.little.star.email.erms.configurations.ERMSConfiguration;
-import org.little.star.email.erms.models.EmailMessage;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.powermock.api.mockito.PowerMockito;
@@ -26,6 +24,9 @@ import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
 import com.sun.mail.smtp.SMTPTransport;
+
+import email.erms.configurations.ERMSConfiguration;
+import email.erms.models.EmailMessage;
 
 @PrepareForTest({ URLName.class, EmailService.class })
 @RunWith(PowerMockRunner.class)
