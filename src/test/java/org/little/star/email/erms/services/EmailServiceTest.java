@@ -1,4 +1,4 @@
-package com.little.star.email.erms.services;
+package org.little.star.email.erms.services;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -17,14 +17,14 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.little.star.email.erms.configurations.ERMSConfiguration;
+import org.little.star.email.erms.models.EmailMessage;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-import com.little.star.email.erms.configurations.ERMSConfiguration;
-import com.little.star.email.erms.models.EmailMessage;
 import com.sun.mail.smtp.SMTPTransport;
 
 @PrepareForTest({ URLName.class, EmailService.class })
@@ -83,10 +83,10 @@ public class EmailServiceTest {
 	}
 
 	private EmailMessage emailMessage() {
-		EmailMessage kanaMessage = new EmailMessage();
-		kanaMessage.setSubject("Subject");
-		kanaMessage.setFromAddress("from@email.com");
-		kanaMessage.setContent("text");
-		return kanaMessage;
+		EmailMessage message = new EmailMessage();
+		message.setSubject("subject");
+		message.setFromAddress("from@email.com");
+		message.setContent("text");
+		return message;
 	}
 }

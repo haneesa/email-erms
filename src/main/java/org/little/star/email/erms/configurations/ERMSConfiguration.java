@@ -1,10 +1,9 @@
-package com.little.star.email.erms.configurations;
+package org.little.star.email.erms.configurations;
 
+import org.little.star.email.erms.services.EmailService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import com.little.star.email.erms.services.EmailService;
 
 import lombok.Data;
 

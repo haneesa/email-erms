@@ -1,4 +1,4 @@
-package com.little.star.email.erms.services;
+package org.little.star.email.erms.services;
 
 import java.util.Properties;
 
@@ -11,10 +11,10 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
+import org.little.star.email.erms.configurations.ERMSConfiguration;
+import org.little.star.email.erms.models.EmailMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.little.star.email.erms.configurations.ERMSConfiguration;
-import com.little.star.email.erms.models.EmailMessage;
 import com.sun.mail.smtp.SMTPTransport;
 
 import lombok.extern.slf4j.Slf4j;
